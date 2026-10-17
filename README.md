@@ -48,26 +48,6 @@ with your actual CoinMarketCap API key.
 python portfolio.py
 ```
 
-## Building an executable (.exe)
-
-If you want to distribute the app as a standalone Windows executable, you can use PyInstaller. Install PyInstaller with:
-
-```bash
-pip install pyinstaller
-```
-
-From the repository root run the following (the same command you used):
-
-```bash
-python -m PyInstaller portfolio.py --onefile --noconsole --icon=favicon
-```
-
-Notes:
-- `--onefile` bundles everything into a single .exe.
-- `--noconsole` hides the console window for GUI apps (omit it if you want to see console output during debugging).
-- `--icon=favicon` should point to an .ico file; e.g. `--icon=favicon.ico`.
-- PyInstaller creates a `dist/` folder containing `portfolio.exe` when it finishes.
-- Test the generated executable on the target Windows machine; antivirus or missing system libraries can sometimes cause issues.
 
 ## Project Structure
 
@@ -119,9 +99,20 @@ CREATE TABLE IF NOT EXISTS crypto(
 3. Refresh the app to pull live prices.
 4. Review the current value and profit/loss for each asset.
 
-## Important Note
 
-The API key is currently hardcoded into `portfolio.py`. For a real production setup, it is better to store it in an environment variable or config file instead of putting it directly in the source code.
+## Building an executable (.exe)
+
+If you want to distribute the app as a standalone Windows executable, you can use PyInstaller. Install PyInstaller with:
+
+```bash
+pip install pyinstaller
+```
+
+From the repository root run the following (the same command you used):
+
+```bash
+python -m PyInstaller portfolio.py --onefile --noconsole --icon=favicon
+```
 
 ## Why I Keep This Repo
 

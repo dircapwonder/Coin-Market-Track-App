@@ -1,44 +1,23 @@
 # Coin Market Track App
 
-A desktop cryptocurrency portfolio tracker built with Python and Tkinter. The app connects to the CoinMarketCap API, stores your portfolio in SQLite, and shows your current holdings, total cost, current value, and profit/loss calculations in a simple GUI.
+A simple cryptocurrency portfolio tracker built with Python using the CoinMarketCap API to track coins' real-time values.
+
+This project lets you keep track of your crypto holdings, view live market prices, and calculate profit/loss based on your entered purchase price and quantity.
+
+This project contains a desktop app built with Tkinter and a local SQLite database for storing your portfolio data.
 
 ## Features
 
 - Track multiple cryptocurrencies in one portfolio
-- Add, update, and remove portfolio entries
-- Fetch live market pricing from CoinMarketCap
-- Display portfolio totals and per-coin profit/loss
-- Persist holdings locally with SQLite
-- Built as a desktop app using Tkinter
-
-## Tech Stack
-
-- Python 3
-- Tkinter
-- SQLite3
-- Requests
-- CoinMarketCap API
-
-## Project Structure
-
-```text
-Coin-Market-Track-App/
-├── portfolio.py
-├── portfolio.spec
-├── favicon.ico
-├── coin.db
-├── README.md
-├── portfolio.exe
-└── .gitignore (if present in your repo)
-```
+- Add, update, and delete coin entries
+- Fetch live crypto prices from CoinMarketCap
+- Calculate amount paid, current value, and profit/loss
+- Store portfolio data locally in SQLite
+- Use a simple desktop GUI built with Tkinter
 
 ## Requirements
 
-Before running the app, make sure you have:
-
-- Python 3.8 or newer
-- `pip` installed
-- Internet access to reach the CoinMarketCap API
+Make sure you have Python 3 installed.
 
 Install the required package:
 
@@ -63,26 +42,45 @@ CMC_PRO_API_KEY=YOUR_API_KEY_HERE
 
 with your actual CoinMarketCap API key.
 
-3. Run the application:
+3. Run the app:
 
 ```bash
 python portfolio.py
 ```
 
+## Project Structure
+
+```text
+Coin-Market-Track-App/
+├── portfolio.py
+├── favicon.ico
+├── coin.db
+├── portfolio.exe
+├── portfolio.spec
+├── README.md
+└── .gitignore
+```
+
 ## How It Works
 
-- The app creates a `coin.db` SQLite database automatically if it does not exist.
-- Each portfolio entry includes the coin symbol, amount held, and purchase price.
-- The app fetches the latest crypto listings from CoinMarketCap and matches them by symbol.
-- It calculates:
-  - total amount paid
-  - current value
-  - profit/loss per coin
-  - total portfolio profit/loss
+The app creates a local SQLite database named `coin.db` if it does not exist.
+
+Each portfolio entry stores:
+
+- the coin symbol
+- the amount owned
+- the average purchase price
+
+Then the app fetches the latest cryptocurrency listings from CoinMarketCap and matches them by symbol. It calculates:
+
+- total amount paid
+- current portfolio value
+- profit/loss per coin
+- total portfolio profit/loss
 
 ## Database Schema
 
-The app uses a SQLite table named `crypto` with this structure:
+The app uses a SQLite table named `crypto`:
 
 ```sql
 CREATE TABLE IF NOT EXISTS crypto(
@@ -93,16 +91,29 @@ CREATE TABLE IF NOT EXISTS crypto(
 )
 ```
 
-## Notes
+## Example Workflow
 
-- The app currently stores the API key directly in the source file. In a production environment, it is better to store this in an environment variable or config file.
-- The app is designed for personal portfolio tracking and educational use.
-- The UI is not a modern web app; it is a simple Tkinter-based desktop interface.
+1. Launch the app.
+2. Add a coin using its symbol, price, and amount held.
+3. Refresh the app to pull live prices.
+4. Review the current value and profit/loss for each asset.
 
-## License
+## Important Note
 
-This project does not currently include a license file. If you plan to publish or share the project, consider adding an open-source license such as MIT.
+The API key is currently hardcoded into `portfolio.py`. For a real production setup, it is better to store it in an environment variable or config file instead of putting it directly in the source code.
+
+## Why I Keep This Repo
+
+This project is a simple personal portfolio tracker that helped me practice working with:
+
+- Python
+- Tkinter
+- SQLite
+- API requests
+- Data processing and portfolio calculations
+
+I wanted to keep this project in my GitHub because it was a useful way to bring together a few different skills in one small application.
 
 ## Disclaimer
 
-This application is intended for personal tracking and educational purposes only. Always verify prices and financial information before making investment decisions.
+This project is for personal tracking and learning purposes. Always verify pricing and financial calculations before making investment decisions.

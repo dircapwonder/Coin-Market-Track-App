@@ -108,7 +108,7 @@ If you want to distribute the app as a standalone Windows executable, you can us
 pip install pyinstaller
 ```
 
-From the repository root run the following (the same command you used):
+From the repository root run the following:
 
 ```bash
 python -m PyInstaller portfolio.py --onefile --noconsole --icon=favicon

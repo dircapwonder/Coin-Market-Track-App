@@ -47,8 +47,6 @@ pip install requests
    python portfolio.py
    ```
 
-> **Security note:** Do not commit your real API key to GitHub. Consider reading it from an environment variable instead of hardcoding it.
-
 ## Usage
 
 | Action | How |
@@ -118,13 +116,6 @@ python -m PyInstaller portfolio.py --onefile --noconsole --icon=favicon.ico
 - The finished file appears in the `dist/` folder.
 
 **Important:** The app loads `favicon.ico` and `coin.db` using relative paths, and `favicon.ico` is not bundled into the executable. Keep `portfolio.exe` in the same folder as `favicon.ico` (and `coin.db`, if you want to keep an existing portfolio), and run it from that folder. Antivirus software can occasionally flag PyInstaller executables, so test the build on the target machine.
-
-## Limitations
-
-- Only the top 250 coins by market cap are fetched, so coins ranked lower are not matched.
-- Coins are matched by symbol only, and each refresh makes one API request, so keep CoinMarketCap's free-tier request limits in mind.
-- The app does not handle network or API errors gracefully yet.
-- Input fields are not validated, so enter numbers carefully.
 
 ## Ideas for Improvement
 

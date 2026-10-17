@@ -80,9 +80,9 @@ Then the app fetches the latest cryptocurrency listings from CoinMarketCap and m
 
 You can also add, update, and delete entries directly from the app interface.
 
-Note about the local database
+### Note about the local database
 
-The included `coin.db` is only a local (fake) database used to store the portfolio entries for this app; it is not connected to any exchange or wallet and does not interact with your real funds. We only use the CoinMarketCap API to fetch market prices — the app does not perform any trading or wallet operations.
+The included `coin.db` is only a local (fake) database used to store the portfolio entries for this app; it is not connected to any exchange or wallet and does not interact with your real funds. We only use the CoinMarketCap API to fetch market prices. This app does not perform any trading or wallet operations.
 
 ## Database Schema
 

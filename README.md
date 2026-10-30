@@ -129,6 +129,10 @@ python -m PyInstaller portfolio.py --onefile --noconsole --icon=favicon.ico
 
 This is a small personal project that let me practice Python, Tkinter, SQLite, REST API requests, and basic portfolio calculations in one application.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ## Disclaimer
 
-This project is for personal tracking and learning purposes only and is not financial advice. Always verify prices and calculations before making investment decisions.
+This project is not affiliated with CoinMarketCap. Price data comes from the CoinMarketCap API and is subject to their terms of use. The prices and the profit/loss values shown in the app are for information only, may be delayed or inaccurate, and are **not financial advice**. You are responsible for your own investment decisions.

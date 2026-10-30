@@ -98,6 +98,7 @@ Coin-Market-Track-App/
 ├── coin.db          # Local SQLite database (sample data)
 ├── portfolio.spec   # PyInstaller build configuration
 ├── portfolio.exe    # Prebuilt Windows executable
+├── LICENSE          # MIT License
 └── README.md
 ```
 
